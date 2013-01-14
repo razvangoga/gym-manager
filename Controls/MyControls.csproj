@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{982D7FE5-9F0E-49EF-BCC9-4D6833645F39}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyControls</RootNamespace>
+    <AssemblyName>MyControls</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomControls\BaseControl\BaseCommandsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\BaseControl\BaseCommandsControl.Designer.cs">
+      <DependentUpon>BaseCommandsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\BaseControl\BaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\BaseControl\BaseControl.Designer.cs">
+      <DependentUpon>BaseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\BaseControl\BaseHtmlViewerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\BaseControl\BaseHtmlViewerControl.Designer.cs">
+      <DependentUpon>BaseHtmlViewerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\BaseControl\BasePivotControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\BaseControl\BasePivotControl.Designer.cs">
+      <DependentUpon>BasePivotControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\BaseControl\BaseReportViewerContainerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\BaseControl\BaseReportViewerContainerControl.Designer.cs">
+      <DependentUpon>BaseReportViewerContainerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\BaseControl\BaseReportViewerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\BaseControl\BaseReportViewerControl.Designer.cs">
+      <DependentUpon>BaseReportViewerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\BaseControl\BaseSearchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\BaseControl\BaseSearchControl.Designer.cs">
+      <DependentUpon>BaseSearchControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\BaseControl\InfoAuditControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\BaseControl\InfoAuditControl.Designer.cs">
+      <DependentUpon>InfoAuditControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\OtherSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\OtherSettingsControl.Designer.cs">
+      <DependentUpon>OtherSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\DatabaseSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\DatabaseSettingsControl.Designer.cs">
+      <DependentUpon>DatabaseSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\Help\HelpHtmlViewerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\Help\HelpHtmlViewerControl.Designer.cs">
+      <DependentUpon>HelpHtmlViewerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\MessageStripFormatting.cs" />
+    <Compile Include="Logic\Miscelanious.cs" />
+    <Compile Include="Logic\StringOperations.cs" />
+    <Compile Include="Logic\XsltTransformWorker.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsControls\myBindingNavigator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WindowsControls\myBindingNavigator.Designer.cs">
+      <DependentUpon>myBindingNavigator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsControls\MyBindingSource.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsControls\myButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsControls\myButton.Designer.cs">
+      <DependentUpon>myButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsControls\myCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsControls\myCheckBox.Designer.cs">
+      <DependentUpon>myCheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsControls\myComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsControls\myComboBox.Designer.cs">
+      <DependentUpon>myComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsControls\myDataGridViewRO.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsControls\myDataGridViewRO.Designer.cs">
+      <DependentUpon>myDataGridViewRO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsControls\myDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsControls\myDateTimePicker.Designer.cs">
+      <DependentUpon>myDateTimePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsControls\myLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsControls\myLabel.Designer.cs">
+      <DependentUpon>myLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsControls\myRibbonMenuButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsControls\myTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsControls\myTextBox.Designer.cs">
+      <DependentUpon>myTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsControls\myTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsControls\myTreeView.Designer.cs">
+      <DependentUpon>myTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsControls\PivotTableColumns\PivotTableDataColumn.cs" />
+    <Compile Include="WindowsControls\PivotTableColumns\PivotTableFormater.cs" />
+    <Compile Include="WindowsControls\PivotTableColumns\PivotTableMiscelaneous.cs" />
+    <Compile Include="WindowsControls\TabStrip\BaseClasses\BaseStyledPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsControls\TabStrip\Control\FATabStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsControls\TabStrip\Control\FATabStripCloseButton.cs" />
+    <Compile Include="WindowsControls\TabStrip\Control\FATabStripItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsControls\TabStrip\Control\FATabStripItemCollection.cs" />
+    <Compile Include="WindowsControls\TabStrip\Control\FATabStripMenuGlyph.cs" />
+    <Compile Include="WindowsControls\TabStrip\Delegates.cs" />
+    <Compile Include="WindowsControls\TabStrip\Design\FATabStripDesigner.cs" />
+    <Compile Include="WindowsControls\TabStrip\Design\FATabStripItemDesigner.cs" />
+    <Compile Include="WindowsControls\TabStrip\Design\ICaptionSupport.cs" />
+    <Compile Include="WindowsControls\TabStrip\Enums.cs" />
+    <Compile Include="WindowsControls\TabStrip\Helpers\CollectionWithEvents.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{046D1CAB-F1A0-4203-AD35-429AF38D001B}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{9CC14AA9-E6E6-483A-B26D-D9272CCC5984}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Helpers\Helpers.csproj">
+      <Project>{8CED8B53-0F5A-4FA3-B749-605124D128A9}</Project>
+      <Name>Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CustomControls\BaseControl\BaseCommandsControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BaseCommandsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\BaseControl\BaseControl.resx">
+      <DependentUpon>BaseControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\BaseControl\BaseHtmlViewerControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BaseHtmlViewerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\BaseControl\BasePivotControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BasePivotControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\BaseControl\BaseReportViewerContainerControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BaseReportViewerContainerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\BaseControl\BaseReportViewerControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BaseReportViewerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\BaseControl\InfoAuditControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InfoAuditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\DatabaseSettingsControl.resx">
+      <DependentUpon>DatabaseSettingsControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsControls\myBindingNavigator.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>myBindingNavigator.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\DAL.Models.DocumentsModel.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.MesurementUnitsModel.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.OthersModel.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.ProductsModel.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.SecurityModel.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.SupplierProductsModel.datasource" />
+    <None Include="Properties\DataSources\DAL.Reports.CAMReport.datasource" />
+    <None Include="Properties\DataSources\DAL.Reports.DescarcareGestiuneReports.datasource" />
+    <None Include="Properties\DataSources\DAL.Reports.FisaMagazieReport.datasource" />
+    <None Include="Properties\DataSources\DAL.Reports.GestiuneZilnicaReport.datasource" />
+    <None Include="Properties\DataSources\DAL.Reports.RecepyPrevisioningReports.datasource" />
+    <None Include="Properties\DataSources\DAL.Views.DocumentsView.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Netdrive Connected.png" />
+    <None Include="Resources\NetDrive disconnect.png" />
+    <None Include="Resources\back.png" />
+    <None Include="Resources\finish.png" />
+    <None Include="Resources\forward.png" />
+    <None Include="Resources\go-first.png" />
+    <None Include="Resources\save.ico" />
+    <None Include="Resources\stop.ico" />
+    <None Include="Resources\add.ico" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\add1.png" />
+    <None Include="Resources\no.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\wi0062-24.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\yes.png" />
+    <None Include="Resources\Home.png" />
+    <None Include="Resources\mobsync3.png" />
+    <None Include="Resources\_active__new.png" />
+    <None Include="Resources\_disabled__new.png" />
+    <None Include="Resources\Properties24.png" />
+    <None Include="Resources\Search32.png" />
+    <None Include="Resources\Print32.png" />
+    <None Include="Resources\Info _Aqua_.png" />
+    <EmbeddedResource Include="CustomControls\BaseControl\BaseSearchControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BaseSearchControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\OtherSettingsControl.resx">
+      <DependentUpon>OtherSettingsControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\Help\HelpHtmlViewerControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>HelpHtmlViewerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Resources\Print.ico" />
+    <Content Include="WindowsControls\TabStrip\FATabStrip.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{00000205-0000-0010-8000-00AA006D2EA4}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxOWC11">
+      <Guid>{0002E558-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="MSComctlLib">
+      <Guid>{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="MSDATASRC">
+      <Guid>{7C0FFAB0-CD84-11D0-949A-00A0C91110ED}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="OWC11">
+      <Guid>{0002E558-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

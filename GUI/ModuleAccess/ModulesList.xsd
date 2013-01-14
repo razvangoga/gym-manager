@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ModulesList" targetNamespace="http://tempuri.org/ModulesList.xsd" xmlns:mstns="http://tempuri.org/ModulesList.xsd" xmlns="http://tempuri.org/ModulesList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ModulesList" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ModulesList" msprop:Generator_DataSetName="ModulesList">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Modules" msprop:Generator_UserTableName="Modules" msprop:Generator_RowDeletedName="ModulesRowDeleted" msprop:Generator_TableClassName="ModulesDataTable" msprop:Generator_RowChangedName="ModulesRowChanged" msprop:Generator_RowClassName="ModulesRow" msprop:Generator_RowChangingName="ModulesRowChanging" msprop:Generator_RowEvArgName="ModulesRowChangeEvent" msprop:Generator_RowEvHandlerName="ModulesRowChangeEventHandler" msprop:Generator_TablePropName="Modules" msprop:Generator_TableVarName="tableModules" msprop:Generator_RowDeletingName="ModulesRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInTable="idColumn" type="xs:int" />
+              <xs:element name="name" msprop:Generator_UserColumnName="name" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInTable="nameColumn" type="xs:string" />
+              <xs:element name="control" msprop:Generator_UserColumnName="control" msprop:Generator_ColumnPropNameInRow="control" msprop:Generator_ColumnVarNameInTable="columncontrol" msprop:Generator_ColumnPropNameInTable="controlColumn" type="xs:string" />
+              <xs:element name="isopen" msprop:Generator_UserColumnName="isopen" msprop:Generator_ColumnPropNameInRow="isopen" msprop:Generator_ColumnVarNameInTable="columnisopen" msprop:Generator_ColumnPropNameInTable="isopenColumn" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Modules" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

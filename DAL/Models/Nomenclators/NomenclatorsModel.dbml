@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Gray_GymManager" Class="NomenclatorsModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=D:\DB\MSSQL\Gray_GymManager.mdf;Persist Security Info=True;User ID=sa;Connect Timeout=30;User Instance=False" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="Gray_GymManagerConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="nomenclators.Entry_Types" Member="Entry_Types">
+    <Type Name="Entry_Type" Id="ID2">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EntryType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updated_by" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="nomenclators.Field_Reservation_Statuses" Member="Field_Reservation_Status">
+    <Type Name="Field_Reservation_Status">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FieldReservationStatus" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="nomenclators.Fields" Member="Fields">
+    <Type Name="Field" Id="ID3">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FieldName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="MinimumRentHours" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updated_by" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="nomenclators.Organization_Details" Member="Organization_Details">
+    <Type Name="Organization_Detail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrganizationName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FiscalCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TradeCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Bank" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BankAccount" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updated_by" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="nomenclators.Product_Types" Member="Product_Types">
+    <Type Name="Product_Type" Id="ID4">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updated_by" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Product_Type_Product" Member="Products" OtherKey="Product_Type_id" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="nomenclators.Subscription_Types" Member="Subscription_Types">
+    <Type Name="Subscription_Type" Id="ID6">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SubscriptionType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="HasUnilimitedEntries" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EntryNumber" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updated_by" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="nomenclators.Products" Member="Products">
+    <Type Name="Product" Id="ID5">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Product_Type_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SalesPrice" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="LastPurchasePrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LastPurchaseDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updated_by" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Product_Type_Product" Member="Product_Type" ThisKey="Product_Type_id" Type="Product_Type" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="nomenclators.Clients" Member="Clients">
+    <Type Name="Client" Id="ID1">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClientName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FiscalCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TradeCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Bank" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BankAccount" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DiscountProcent" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updated_by" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.Clients_Delete" Method="Clients_Delete">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Entry_Types_Delete" Method="Entry_Types_Delete">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Entry_Types_Insert" Method="Entry_Types_Insert">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="EntryType" Parameter="entryType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Price" Parameter="price" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="created_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="created_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Entry_Types_Update" Method="Entry_Types_Update">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EntryType" Parameter="entryType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Price" Parameter="price" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="updated_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="updated_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Fields_Delete" Method="Fields_Delete">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Fields_Insert" Method="Fields_Insert">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="FieldName" Parameter="fieldName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Price" Parameter="price" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="MinimumRentHours" Parameter="minimumRentHours" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="created_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="created_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Fields_Update" Method="Fields_Update">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FieldName" Parameter="fieldName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Price" Parameter="price" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="MinimumRentHours" Parameter="minimumRentHours" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="updated_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="updated_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Organization_Details_Update" Method="Organization_Details_Update">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="OrganizationName" Parameter="organizationName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="FiscalCode" Parameter="fiscalCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TradeCode" Parameter="tradeCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Phone" Parameter="phone" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Bank" Parameter="bank" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BankAccount" Parameter="bankAccount" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="updated_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="updated_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Product_Types_Delete" Method="Product_Types_Delete">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Product_Types_Insert" Method="Product_Types_Insert">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ProductType" Parameter="productType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="created_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="created_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Product_Types_Update" Method="Product_Types_Update">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProductType" Parameter="productType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="updated_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="updated_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Products_Delete" Method="Products_Delete">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Products_Insert" Method="Products_Insert">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ProductName" Parameter="productName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Product_Type_id" Parameter="product_Type_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SalesPrice" Parameter="salesPrice" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="LastPurchasePrice" Parameter="lastPurchasePrice" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="LastPurchaseDate" Parameter="lastPurchaseDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="created_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="created_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Products_Update" Method="Products_Update">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProductName" Parameter="productName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Product_Type_id" Parameter="product_Type_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SalesPrice" Parameter="salesPrice" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="LastPurchasePrice" Parameter="lastPurchasePrice" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="LastPurchaseDate" Parameter="lastPurchaseDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="updated_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="updated_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Subscription_Types_Delete" Method="Subscription_Types_Delete">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Clients_CanDelete" Method="Clients_CanDelete">
+    <Parameter Name="pId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Clients_CanDeleteResult">
+      <Column Name="ClientCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Clients_GetClientByUniqueKey" Method="Clients_GetClientByUniqueKey">
+    <Parameter Name="pClientName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pCurrentId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.Entry_Types_CanDelete" Method="Entry_Types_CanDelete">
+    <Parameter Name="pId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Entry_Types_CanDeleteResult">
+      <Column Name="EntryTypeCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Entry_Types_GetEntryTypeByUniqueKey" Method="Entry_Types_GetEntryTypeByUniqueKey">
+    <Parameter Name="pEntryType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pCurrentId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="dbo.Fields_CanDelete" Method="Fields_CanDelete">
+    <Parameter Name="pId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Fields_CanDeleteResult">
+      <Column Name="FieldCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Fields_GetFieldByUniqueKey" Method="Fields_GetFieldByUniqueKey">
+    <Parameter Name="pFieldName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pCurrentId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="dbo.Product_Types_CanDelete" Method="Product_Types_CanDelete">
+    <Parameter Name="pId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Product_Types_CanDeleteResult">
+      <Column Name="ProductTypeCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Product_Types_GetProductTypeByUniqueKey" Method="Product_Types_GetProductTypeByUniqueKey">
+    <Parameter Name="pProductType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pCurrentId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID4" />
+  </Function>
+  <Function Name="dbo.Products_CanDelete" Method="Products_CanDelete">
+    <Parameter Name="pId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Products_CanDeleteResult">
+      <Column Name="ProductsCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Products_GetProductByUniqueKey" Method="Products_GetProductByUniqueKey">
+    <Parameter Name="pProductName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pCurrentId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID5" />
+  </Function>
+  <Function Name="dbo.Subscription_Types_CanDelete" Method="Subscription_Types_CanDelete">
+    <Parameter Name="pId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Subscription_Types_CanDeleteResult">
+      <Column Name="SubscriptionTypeCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Subscription_Types_GetSubscriptionTypeByUniqueKey" Method="Subscription_Types_GetSubscriptionTypeByUniqueKey">
+    <Parameter Name="pSubscriptionType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pCurrentId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID6" />
+  </Function>
+  <Function Name="dbo.Subscription_Types_Update" Method="Subscription_Types_Update">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SubscriptionType" Parameter="subscriptionType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Price" Parameter="price" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="HasUnilimitedEntries" Parameter="hasUnilimitedEntries" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="EntryNumber" Parameter="entryNumber" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="updated_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="updated_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Subscription_Types_Insert" Method="Subscription_Types_Insert">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="SubscriptionType" Parameter="subscriptionType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Price" Parameter="price" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="HasUnilimitedEntries" Parameter="hasUnilimitedEntries" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="EntryNumber" Parameter="entryNumber" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="created_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="created_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Clients_Insert" Method="Clients_Insert">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ClientName" Parameter="clientName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="FiscalCode" Parameter="fiscalCode" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="TradeCode" Parameter="tradeCode" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Phone" Parameter="phone" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Bank" Parameter="bank" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BankAccount" Parameter="bankAccount" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DiscountProcent" Parameter="discountProcent" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="created_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="created_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Clients_Update" Method="Clients_Update">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ClientName" Parameter="clientName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="FiscalCode" Parameter="fiscalCode" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="TradeCode" Parameter="tradeCode" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Phone" Parameter="phone" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Bank" Parameter="bank" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BankAccount" Parameter="bankAccount" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DiscountProcent" Parameter="discountProcent" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="updated_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="updated_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

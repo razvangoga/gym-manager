@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3E30D127-37A9-456D-9BBF-F6F851E948B4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GUI</RootNamespace>
+    <AssemblyName>GUI</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.OWC11, Version=11.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Controls\bin\Release\AxInterop.OWC11.dll</HintPath>
+    </Reference>
+    <Reference Include="BSE.Windows.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Components\BSE.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LoginWindow\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginWindow\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow\MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow\MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleAccess\ModulesList.cs">
+      <DependentUpon>ModulesList.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleAccess\ModulesList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModulesList.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclators\Clients\ClientsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Nomenclators\Clients\ClientsControl.Designer.cs">
+      <DependentUpon>ClientsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclators\EntryTypes\EntryTypesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Nomenclators\EntryTypes\EntryTypesControl.Designer.cs">
+      <DependentUpon>EntryTypesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclators\Fields\FieldsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Nomenclators\Fields\FieldsControl.Designer.cs">
+      <DependentUpon>FieldsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclators\OrganizationDetails\OrganizationDetailsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Nomenclators\OrganizationDetails\OrganizationDetailsControl.Designer.cs">
+      <DependentUpon>OrganizationDetailsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclators\Products\ProductsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Nomenclators\Products\ProductsControl.Designer.cs">
+      <DependentUpon>ProductsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclators\ProductTypes\ProductTypesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Nomenclators\ProductTypes\ProductTypesControl.Designer.cs">
+      <DependentUpon>ProductTypesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclators\SubscriptionTypes\SubscriptionTypesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Nomenclators\SubscriptionTypes\SubscriptionTypesControl.Designer.cs">
+      <DependentUpon>SubscriptionTypesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operations\Entries\EntriesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Operations\Entries\EntriesControl.Designer.cs">
+      <DependentUpon>EntriesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operations\FieldReservations\CalendarEventItemControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Operations\FieldReservations\CalendarEventItemControl.Designer.cs">
+      <DependentUpon>CalendarEventItemControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operations\FieldReservations\CalendarPeriodItemControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Operations\FieldReservations\CalendarPeriodItemControl.Designer.cs">
+      <DependentUpon>CalendarPeriodItemControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operations\FieldReservations\FieldReservationsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Operations\FieldReservations\FieldReservationsControl.Designer.cs">
+      <DependentUpon>FieldReservationsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operations\FieldReservations\FieldReservationsScheduleControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Operations\FieldReservations\FieldReservationsScheduleControl.Designer.cs">
+      <DependentUpon>FieldReservationsScheduleControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operations\ProductEntries\ProductEntriesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Operations\ProductEntries\ProductEntriesControl.Designer.cs">
+      <DependentUpon>ProductEntriesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operations\ProductSales\ProductSalesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Operations\ProductSales\ProductSalesControl.Designer.cs">
+      <DependentUpon>ProductSalesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operations\Subscriptions\SubscriptionsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Operations\Subscriptions\SubscriptionsControl.Designer.cs">
+      <DependentUpon>SubscriptionsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DailyWarnings\DailyWarningsHtmlReportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\DailyWarnings\DailyWarningsHtmlReportControl.Designer.cs">
+      <DependentUpon>DailyWarningsHtmlReportControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\FisaMagazie\FisaMagazieHtmlReportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\FisaMagazie\FisaMagazieHtmlReportControl.Designer.cs">
+      <DependentUpon>FisaMagazieHtmlReportControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MonthlyInvoice\MonthlyInvoiceHtmlReportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\MonthlyInvoice\MonthlyInvoiceHtmlReportControl.Designer.cs">
+      <DependentUpon>MonthlyInvoiceHtmlReportControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PeriodSales\PeriodSalesPivotControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\PeriodSales\PeriodSalesPivotControl.Designer.cs">
+      <DependentUpon>PeriodSalesPivotControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PeriodStock\PeriodStockPivotControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\PeriodStock\PeriodStockPivotControl.Designer.cs">
+      <DependentUpon>PeriodStockPivotControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SubscriptionDetails\SubscriptionDetailsHtmlReportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\SubscriptionDetails\SubscriptionDetailsHtmlReportControl.Designer.cs">
+      <DependentUpon>SubscriptionDetailsHtmlReportControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Security\LockedObjects\LockedObjects.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Security\LockedObjects\LockedObjects.Designer.cs">
+      <DependentUpon>LockedObjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Security\Roles\RolesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Security\Roles\RolesControl.Designer.cs">
+      <DependentUpon>RolesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Security\Users\UsersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Security\Users\UsersControl.Designer.cs">
+      <DependentUpon>UsersControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsWindow\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsWindow\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{046D1CAB-F1A0-4203-AD35-429AF38D001B}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Controls\MyControls.csproj">
+      <Project>{982D7FE5-9F0E-49EF-BCC9-4D6833645F39}</Project>
+      <Name>MyControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{9CC14AA9-E6E6-483A-B26D-D9272CCC5984}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Helpers\Helpers.csproj">
+      <Project>{8CED8B53-0F5A-4FA3-B749-605124D128A9}</Project>
+      <Name>Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LoginWindow\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow\MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\app.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\documents.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\My Documents2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Undo32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ModuleAccess\ModulesList.xsc">
+      <DependentUpon>ModulesList.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleAccess\ModulesList.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ModulesList.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ModuleAccess\ModulesList.xss">
+      <DependentUpon>ModulesList.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\Up32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ModuleAccess\ModulesList.xml" />
+    <EmbeddedResource Include="Nomenclators\Clients\ClientsControl.resx">
+      <DependentUpon>ClientsControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nomenclators\EntryTypes\EntryTypesControl.resx">
+      <DependentUpon>EntryTypesControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nomenclators\Fields\FieldsControl.resx">
+      <DependentUpon>FieldsControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nomenclators\OrganizationDetails\OrganizationDetailsControl.resx">
+      <DependentUpon>OrganizationDetailsControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nomenclators\Products\ProductsControl.resx">
+      <DependentUpon>ProductsControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nomenclators\ProductTypes\ProductTypesControl.resx">
+      <DependentUpon>ProductTypesControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nomenclators\SubscriptionTypes\SubscriptionTypesControl.resx">
+      <DependentUpon>SubscriptionTypesControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\Entries\EntriesControl.resx">
+      <DependentUpon>EntriesControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\FieldReservations\CalendarEventItemControl.resx">
+      <DependentUpon>CalendarEventItemControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\FieldReservations\CalendarPeriodItemControl.resx">
+      <DependentUpon>CalendarPeriodItemControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\FieldReservations\FieldReservationsControl.resx">
+      <DependentUpon>FieldReservationsControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\FieldReservations\FieldReservationsScheduleControl.resx">
+      <DependentUpon>FieldReservationsScheduleControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\ProductEntries\ProductEntriesControl.resx">
+      <DependentUpon>ProductEntriesControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\ProductSales\ProductSalesControl.resx">
+      <DependentUpon>ProductSalesControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\Subscriptions\SubscriptionsControl.resx">
+      <DependentUpon>SubscriptionsControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DailyWarnings\DailyWarningsHtmlReportControl.resx">
+      <DependentUpon>DailyWarningsHtmlReportControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PeriodSales\PeriodSalesPivotControl.resx">
+      <DependentUpon>PeriodSalesPivotControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PeriodStock\PeriodStockPivotControl.resx">
+      <DependentUpon>PeriodStockPivotControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Security\LockedObjects\LockedObjects.resx">
+      <DependentUpon>LockedObjects.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Security\Roles\RolesControl.resx">
+      <DependentUpon>RolesControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Security\Users\UsersControl.resx">
+      <DependentUpon>UsersControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsWindow\SettingsForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forward32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_active__settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Import32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wi0054-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\DAL.Models.Nomenclators.Client.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Nomenclators.Entry_Type.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Nomenclators.Field.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Nomenclators.Organization_Detail.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Nomenclators.Product.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Nomenclators.Product_Type.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Nomenclators.Subscription_Type.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Operations.Entry.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Operations.Field_Reservation.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Operations.Product_Entry.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Operations.Product_Sale.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Operations.Subscription.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Operations.Subscription_Entry.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Security.Access_Right.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Security.Role.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Security.Roles_Access_Right.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Security.User.datasource" />
+    <None Include="Resources\PIE DIAGRAM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\DAL.Models.Nomenclators.Field_Reservation_Status.datasource" />
+    <None Include="Properties\DataSources\DAL.Models.Security.Locked_Object.datasource" />
+    <None Include="Properties\DataSources\DAL.Views.Security.Locked_Objects_View.datasource" />
+    <None Include="Resources\add1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Properties24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{00000205-0000-0010-8000-00AA006D2EA4}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="MSComctlLib">
+      <Guid>{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="MSDATASRC">
+      <Guid>{7C0FFAB0-CD84-11D0-949A-00A0C91110ED}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="OWC11">
+      <Guid>{0002E558-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\DailyWarnings\DailyWarnings.xsl" />
+    <EmbeddedResource Include="Reports\SubscriptionDetails\SubscriptionDetailsHtmlReportControl.resx">
+      <DependentUpon>SubscriptionDetailsHtmlReportControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\FisaMagazie\FisaMagazieHtmlReportControl.resx">
+      <DependentUpon>FisaMagazieHtmlReportControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SubscriptionDetails\SubscriptionDetails.xsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\FisaMagazie\FisaMagazie.xsl" />
+    <EmbeddedResource Include="Reports\MonthlyInvoice\MonthlyInvoiceHtmlReportControl.resx">
+      <DependentUpon>MonthlyInvoiceHtmlReportControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\MonthlyInvoice\MonthlyInvoice.xsl" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

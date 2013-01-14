@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Gray_GymManager" Class="OperationsModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=D:\DB\MSSQL\Gray_GymManager.mdf;Persist Security Info=True;User ID=sa;Connect Timeout=30;User Instance=False" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="Gray_GymManagerConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="operations.Product_Entries" Member="Product_Entries">
+    <Type Name="Product_Entry">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductEntryDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EntryPrice" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="EntryQuantity" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updated_by" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="operations.Subscription_Entries" Member="Subscription_Entries">
+    <Type Name="Subscription_Entry">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Subscription_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EntryDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updated_by" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Subscription_Subscription_Entry" Member="Subscription" ThisKey="Subscription_id" Type="Subscription" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+    <InsertFunction FunctionId="FunctionId1">
+      <Argument Parameter="id" Member="id" />
+      <Argument Parameter="subscription_id" Member="Subscription_id" />
+      <Argument Parameter="entryDate" Member="EntryDate" />
+      <Argument Parameter="created_by" Member="created_by" />
+      <Argument Parameter="created_at" Member="created_at" />
+    </InsertFunction>
+    <UpdateFunction FunctionId="FunctionId2">
+      <Argument Parameter="id" Member="id" />
+      <Argument Parameter="subscription_id" Member="Subscription_id" />
+      <Argument Parameter="entryDate" Member="EntryDate" />
+      <Argument Parameter="updated_by" Member="updated_by" />
+      <Argument Parameter="updated_at" Member="updated_at" />
+    </UpdateFunction>
+    <DeleteFunction FunctionId="FunctionId3">
+      <Argument Parameter="id" Member="id" />
+    </DeleteFunction>
+  </Table>
+  <Table Name="operations.Entries" Member="Entries">
+    <Type Name="Entry">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Entry_Type_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EntryDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="DiscountProcent" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Details" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Client_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updated_by" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="operations.Product_Sales" Member="Product_Sales">
+    <Type Name="Product_Sale">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductSalesDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SalesPrice" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="SalesQuantity" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="DiscountProcent" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Client_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updated_by" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="operations.Subscriptions" Member="Subscriptions">
+    <Type Name="Subscription" Id="ID1">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Subscription_Type_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="DiscountProcent" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="SubscriptionStartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SubscriptionEndDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="HasUnilimitedEntries" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EntryNumber" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="RemainingEntries" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Details" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Client_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updated_by" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Subscription_Subscription_Entry" Member="Subscription_Entries" OtherKey="Subscription_id" Type="Subscription_Entry" />
+    </Type>
+    <InsertFunction FunctionId="FunctionId4">
+      <Argument Parameter="id" Member="id" />
+      <Argument Parameter="subscription_Type_id" Member="Subscription_Type_id" />
+      <Argument Parameter="price" Member="Price" />
+      <Argument Parameter="discountProcent" Member="DiscountProcent" />
+      <Argument Parameter="subscriptionStartDate" Member="SubscriptionStartDate" />
+      <Argument Parameter="subscriptionEndDate" Member="SubscriptionEndDate" />
+      <Argument Parameter="hasUnilimitedEntries" Member="HasUnilimitedEntries" />
+      <Argument Parameter="entryNumber" Member="EntryNumber" />
+      <Argument Parameter="remainingEntries" Member="RemainingEntries" />
+      <Argument Parameter="details" Member="Details" />
+      <Argument Parameter="client_id" Member="Client_id" />
+      <Argument Parameter="created_by" Member="created_by" />
+      <Argument Parameter="created_at" Member="created_at" />
+    </InsertFunction>
+    <UpdateFunction FunctionId="FunctionId5">
+      <Argument Parameter="id" Member="id" />
+      <Argument Parameter="subscription_Type_id" Member="Subscription_Type_id" />
+      <Argument Parameter="price" Member="Price" />
+      <Argument Parameter="discountProcent" Member="DiscountProcent" />
+      <Argument Parameter="subscriptionStartDate" Member="SubscriptionStartDate" />
+      <Argument Parameter="subscriptionEndDate" Member="SubscriptionEndDate" />
+      <Argument Parameter="hasUnilimitedEntries" Member="HasUnilimitedEntries" />
+      <Argument Parameter="entryNumber" Member="EntryNumber" />
+      <Argument Parameter="remainingEntries" Member="RemainingEntries" />
+      <Argument Parameter="details" Member="Details" />
+      <Argument Parameter="client_id" Member="Client_id" />
+      <Argument Parameter="updated_by" Member="updated_by" />
+      <Argument Parameter="updated_at" Member="updated_at" />
+    </UpdateFunction>
+    <DeleteFunction FunctionId="FunctionId6">
+      <Argument Parameter="id" Member="id" />
+    </DeleteFunction>
+  </Table>
+  <Table Name="operations.Field_Reservations" Member="Field_Reservations">
+    <Type Name="Field_Reservation">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Field_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Client_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="DiscountProcent" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ReservationFromDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ReservationToDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Field_Reservation_Status_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updated_by" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="operations.Invoices" Member="Invoices">
+    <Type Name="Invoice" Id="ID2">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Client_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InvoiceYear" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InvoiceMonth" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InvoiceDay" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.Entries_Delete" Method="Entries_Delete">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Field_Reservations_Delete" Method="Field_Reservations_Delete">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Product_Entries_Delete" Method="Product_Entries_Delete">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Product_Entries_Update" Method="Product_Entries_Update">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Product_id" Parameter="product_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProductEntryDate" Parameter="productEntryDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="EntryPrice" Parameter="entryPrice" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="EntryQuantity" Parameter="entryQuantity" Type="System.Double" DbType="Float" />
+    <Parameter Name="updated_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="updated_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Product_Entries_Insert" Method="Product_Entries_Insert">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="Product_id" Parameter="product_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProductEntryDate" Parameter="productEntryDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="EntryPrice" Parameter="entryPrice" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="EntryQuantity" Parameter="entryQuantity" Type="System.Double" DbType="Float" />
+    <Parameter Name="created_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="created_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Product_Sales_Delete" Method="Product_Sales_Delete">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId6" Name="dbo.Subscriptions_Delete" Method="Subscriptions_Delete">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId3" Name="dbo.Subscription_Entries_Delete" Method="Subscription_Entries_Delete">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId1" Name="dbo.Subscription_Entries_Insert" Method="Subscription_Entries_Insert">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="Subscription_id" Parameter="subscription_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EntryDate" Parameter="entryDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="created_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="created_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId2" Name="dbo.Subscription_Entries_Update" Method="Subscription_Entries_Update">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Subscription_id" Parameter="subscription_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EntryDate" Parameter="entryDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="updated_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="updated_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Entries_Insert" Method="Entries_Insert">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="Entry_Type_id" Parameter="entry_Type_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EntryDate" Parameter="entryDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Price" Parameter="price" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="DiscountProcent" Parameter="discountProcent" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="Details" Parameter="details" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Client_id" Parameter="client_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="created_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="created_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Entries_Update" Method="Entries_Update">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Entry_Type_id" Parameter="entry_Type_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EntryDate" Parameter="entryDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Price" Parameter="price" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="DiscountProcent" Parameter="discountProcent" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="Details" Parameter="details" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Client_id" Parameter="client_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="updated_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="updated_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Product_Sales_Insert" Method="Product_Sales_Insert">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="Product_id" Parameter="product_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProductSalesDate" Parameter="productSalesDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="SalesPrice" Parameter="salesPrice" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="DiscountProcent" Parameter="discountProcent" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="SalesQuantity" Parameter="salesQuantity" Type="System.Double" DbType="Float" />
+    <Parameter Name="Client_id" Parameter="client_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="created_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="created_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Product_Sales_Update" Method="Product_Sales_Update">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Product_id" Parameter="product_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProductSalesDate" Parameter="productSalesDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="SalesPrice" Parameter="salesPrice" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="DiscountProcent" Parameter="discountProcent" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="SalesQuantity" Parameter="salesQuantity" Type="System.Double" DbType="Float" />
+    <Parameter Name="Client_id" Parameter="client_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="updated_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="updated_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId4" Name="dbo.Subscriptions_Insert" Method="Subscriptions_Insert">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="Subscription_Type_id" Parameter="subscription_Type_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Price" Parameter="price" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="DiscountProcent" Parameter="discountProcent" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="SubscriptionStartDate" Parameter="subscriptionStartDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="SubscriptionEndDate" Parameter="subscriptionEndDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="HasUnilimitedEntries" Parameter="hasUnilimitedEntries" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="EntryNumber" Parameter="entryNumber" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="RemainingEntries" Parameter="remainingEntries" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="Details" Parameter="details" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Client_id" Parameter="client_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="created_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="created_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId5" Name="dbo.Subscriptions_Update" Method="Subscriptions_Update">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Subscription_Type_id" Parameter="subscription_Type_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Price" Parameter="price" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="DiscountProcent" Parameter="discountProcent" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="SubscriptionStartDate" Parameter="subscriptionStartDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="SubscriptionEndDate" Parameter="subscriptionEndDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="HasUnilimitedEntries" Parameter="hasUnilimitedEntries" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="EntryNumber" Parameter="entryNumber" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="RemainingEntries" Parameter="remainingEntries" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="Details" Parameter="details" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Client_id" Parameter="client_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="updated_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="updated_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Subscriptions_GetActive" Method="Subscriptions_GetActive">
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.Subscriptions_GetInactive" Method="Subscriptions_GetInactive">
+    <Parameter Name="startDateFrom" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="startDateTo" Type="System.DateTime" DbType="DateTime" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.Field_Reservations_Insert" Method="Field_Reservations_Insert">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="Field_id" Parameter="field_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Client_id" Parameter="client_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Price" Parameter="price" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="DiscountProcent" Parameter="discountProcent" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="ReservationFromDate" Parameter="reservationFromDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ReservationToDate" Parameter="reservationToDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Field_Reservation_Status_id" Parameter="field_Reservation_Status_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="created_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="created_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Field_Reservations_Update" Method="Field_Reservations_Update">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Field_id" Parameter="field_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Client_id" Parameter="client_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Price" Parameter="price" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="DiscountProcent" Parameter="discountProcent" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="ReservationFromDate" Parameter="reservationFromDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ReservationToDate" Parameter="reservationToDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Field_Reservation_Status_id" Parameter="field_Reservation_Status_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="updated_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="updated_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Invoices_GetInvoice" Method="Invoices_GetInvoice">
+    <Parameter Name="pClientId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pInvoiceYear" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pInvoiceMonth" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="dbo.Invoices_Insert" Method="Invoices_Insert">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="Client_id" Parameter="client_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InvoiceYear" Parameter="invoiceYear" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InvoiceMonth" Parameter="invoiceMonth" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InvoiceDay" Parameter="invoiceDay" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Field_Reservations_UpdateStatusesJob" Method="Field_Reservations_UpdateStatusesJob">
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

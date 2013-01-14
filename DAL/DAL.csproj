@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9CC14AA9-E6E6-483A-B26D-D9272CCC5984}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Logic\GeneralDatabaseAccess.cs" />
+    <Compile Include="Logic\ModelLogic.cs" />
+    <Compile Include="Logic\ModelLogicInterface.cs" />
+    <Compile Include="Logic\Session.cs" />
+    <Compile Include="Logic\Settings.cs" />
+    <Compile Include="Logic\TableModificationsInterface.cs" />
+    <Compile Include="Models\Nomenclators\ClientExtentions.cs" />
+    <Compile Include="Models\Nomenclators\EntryTypeExtensions.cs" />
+    <Compile Include="Models\Nomenclators\FieldExtentions.cs" />
+    <Compile Include="Models\Nomenclators\NomenclatorsModel.cs">
+      <DependentUpon>NomenclatorsModel.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Nomenclators\NomenclatorsModel.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NomenclatorsModel.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Nomenclators\NomenclatorsModelMethods.cs" />
+    <Compile Include="Models\Nomenclators\ProductExtentions.cs" />
+    <Compile Include="Models\Nomenclators\ProductTypeExtentions.cs" />
+    <Compile Include="Models\Nomenclators\SubscriptionTypeExtentions.cs" />
+    <Compile Include="Models\Operations\EntryExtentions.cs" />
+    <Compile Include="Models\Operations\FieldReservationsExtentions.cs" />
+    <Compile Include="Models\Operations\OperationsModelMethods.cs" />
+    <Compile Include="Models\Operations\OperationsModel.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OperationsModel.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Operations\ProductEntryExtentions.cs" />
+    <Compile Include="Models\Operations\ProductSaleExtentions.cs" />
+    <Compile Include="Models\Operations\SubscriptionEntryExtentions.cs" />
+    <Compile Include="Models\Operations\SubscriptionExtentions.cs" />
+    <Compile Include="Models\Security\RolesAccessRightExtentions.cs" />
+    <Compile Include="Models\Security\UserExtentions.cs" />
+    <Compile Include="Models\Security\SecurityModel.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SecurityModel.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Security\SecurityModelMethods.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DailyWarnings\DailyWarnings.cs">
+      <DependentUpon>DailyWarnings.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DailyWarnings\DailyWarnings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DailyWarnings.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\FisaMagazie\FisaMagazie.cs">
+      <DependentUpon>FisaMagazie.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\FisaMagazie\FisaMagazie.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FisaMagazie.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MonthlyInvoice\MonthlyInvoice.cs">
+      <DependentUpon>MonthlyInvoice.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MonthlyInvoice\MonthlyInvoice.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonthlyInvoice.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PeriodSales\PeriodSales.cs">
+      <DependentUpon>PeriodSales.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PeriodSales\PeriodSales.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PeriodSales.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PeriodStock\PeriodStock.cs">
+      <DependentUpon>PeriodStock.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PeriodStock\PeriodStock.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PeriodStock.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SubscriptionDetails\SubscriptionDetails.cs">
+      <DependentUpon>SubscriptionDetails.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SubscriptionDetails\SubscriptionDetails.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SubscriptionDetails.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Views\Operations\OperationsView.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OperationsView.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Operations\OperationsViewMethods.cs" />
+    <Compile Include="Views\Security\SecurityView.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SecurityView.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Security\SecurityViewMethods.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Models\Nomenclators\NomenclatorsModel.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>NomenclatorsModel.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Models\Nomenclators\NomenclatorsModel.dbml.layout">
+      <DependentUpon>NomenclatorsModel.dbml</DependentUpon>
+    </None>
+    <None Include="Models\Operations\OperationsModel.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>OperationsModel.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Models\Operations\OperationsModel.dbml.layout">
+      <DependentUpon>OperationsModel.dbml</DependentUpon>
+    </None>
+    <None Include="Models\Security\SecurityModel.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>SecurityModel.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Models\Security\SecurityModel.dbml.layout">
+      <DependentUpon>SecurityModel.dbml</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\DailyWarnings\DailyWarnings.xsc">
+      <DependentUpon>DailyWarnings.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DailyWarnings\DailyWarnings.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DailyWarnings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\DailyWarnings\DailyWarnings.xss">
+      <DependentUpon>DailyWarnings.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\FisaMagazie\FisaMagazie.xsc">
+      <DependentUpon>FisaMagazie.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\FisaMagazie\FisaMagazie.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FisaMagazie.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\FisaMagazie\FisaMagazie.xss">
+      <DependentUpon>FisaMagazie.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\MonthlyInvoice\MonthlyInvoice.xsc">
+      <DependentUpon>MonthlyInvoice.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\MonthlyInvoice\MonthlyInvoice.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MonthlyInvoice.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\MonthlyInvoice\MonthlyInvoice.xss">
+      <DependentUpon>MonthlyInvoice.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\PeriodSales\PeriodSales.xsc">
+      <DependentUpon>PeriodSales.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\PeriodSales\PeriodSales.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PeriodSales.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\PeriodSales\PeriodSales.xss">
+      <DependentUpon>PeriodSales.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\PeriodStock\PeriodStock.xsc">
+      <DependentUpon>PeriodStock.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\PeriodStock\PeriodStock.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PeriodStock.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\PeriodStock\PeriodStock.xss">
+      <DependentUpon>PeriodStock.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\SubscriptionDetails\SubscriptionDetails.xsc">
+      <DependentUpon>SubscriptionDetails.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\SubscriptionDetails\SubscriptionDetails.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SubscriptionDetails.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\SubscriptionDetails\SubscriptionDetails.xss">
+      <DependentUpon>SubscriptionDetails.xsd</DependentUpon>
+    </None>
+    <None Include="Views\Operations\OperationsView.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>OperationsView.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Views\Operations\OperationsView.dbml.layout">
+      <DependentUpon>OperationsView.dbml</DependentUpon>
+    </None>
+    <None Include="Views\Security\SecurityView.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>SecurityView.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Views\Security\SecurityView.dbml.layout">
+      <DependentUpon>SecurityView.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Helpers\Helpers.csproj">
+      <Project>{8CED8B53-0F5A-4FA3-B749-605124D128A9}</Project>
+      <Name>Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.9.2">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2005 Express Edition SP2 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

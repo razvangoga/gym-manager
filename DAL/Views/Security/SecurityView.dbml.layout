@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SecurityView">
+  <DataContextMoniker Name="/SecurityViewDataContext" />
+  <nestedChildShapes>
+    <classShape Id="3989baba-0ac1-4cfa-a90d-7cdeb767f542" absoluteBounds="1.625, 2.125, 2, 1.75354248046875">
+      <DataClassMoniker Name="/SecurityViewDataContext/Locked_Objects_View" />
+      <nestedChildShapes>
+        <elementListCompartment Id="05988ec8-3970-4b44-aafa-3c6610cf3388" absoluteBounds="1.6400000000000001, 2.585, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

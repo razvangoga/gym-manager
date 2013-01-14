@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Gray_GymManager" Class="SecurityModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=D:\razvan\MSSQL_Data\Gray_GymManager.mdf;Persist Security Info=True;User ID=sa;Connect Timeout=30;User Instance=False" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="Gray_GymManagerConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="security.Users" Member="Users">
+    <Type Name="User" Id="ID1">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Login" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Role_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updated_by" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Role_User" Member="Role" ThisKey="Role_id" Type="Role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="security.Roles_Access_Rights" Member="Roles_Access_Rights">
+    <Type Name="Roles_Access_Right">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Role_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Access_Right_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HasNew" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="HasEdit" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="HasDelete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updated_by" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Role_Roles_Access_Right" Member="Role" ThisKey="Role_id" Type="Role" IsForeignKey="true" />
+      <Association Name="Access_Right_Roles_Access_Right" Member="Access_Right" ThisKey="Access_Right_id" Type="Access_Right" IsForeignKey="true" />
+    </Type>
+    <InsertFunction FunctionId="FunctionId1">
+      <Argument Parameter="id" Member="id" />
+      <Argument Parameter="role_id" Member="Role_id" />
+      <Argument Parameter="access_Right_id" Member="Access_Right_id" />
+      <Argument Parameter="hasNew" Member="HasNew" />
+      <Argument Parameter="hasEdit" Member="HasEdit" />
+      <Argument Parameter="hasDelete" Member="HasDelete" />
+      <Argument Parameter="created_by" Member="created_by" />
+      <Argument Parameter="created_at" Member="created_at" />
+    </InsertFunction>
+    <UpdateFunction FunctionId="FunctionId2">
+      <Argument Parameter="id" Member="id" />
+      <Argument Parameter="role_id" Member="Role_id" />
+      <Argument Parameter="access_Right_id" Member="Access_Right_id" />
+      <Argument Parameter="hasNew" Member="HasNew" />
+      <Argument Parameter="hasEdit" Member="HasEdit" />
+      <Argument Parameter="hasDelete" Member="HasDelete" />
+      <Argument Parameter="updated_by" Member="updated_by" />
+      <Argument Parameter="updated_at" Member="updated_at" />
+    </UpdateFunction>
+    <DeleteFunction FunctionId="FunctionId3">
+      <Argument Parameter="id" Member="id" />
+    </DeleteFunction>
+  </Table>
+  <Table Name="security.Roles" Member="Roles">
+    <Type Name="Role" Id="ID3">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updated_by" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Role_User" Member="Users" OtherKey="Role_id" Type="User" />
+      <Association Name="Role_Roles_Access_Right" Member="Roles_Access_Rights" OtherKey="Role_id" Type="Roles_Access_Right" />
+    </Type>
+    <InsertFunction FunctionId="FunctionId4">
+      <Argument Parameter="id" Member="id" />
+      <Argument Parameter="roleName" Member="RoleName" />
+      <Argument Parameter="description" Member="Description" />
+      <Argument Parameter="created_by" Member="created_by" />
+      <Argument Parameter="created_at" Member="created_at" />
+    </InsertFunction>
+    <UpdateFunction FunctionId="FunctionId5">
+      <Argument Parameter="id" Member="id" />
+      <Argument Parameter="roleName" Member="RoleName" />
+      <Argument Parameter="description" Member="Description" />
+      <Argument Parameter="updated_by" Member="updated_by" />
+      <Argument Parameter="updated_at" Member="updated_at" />
+    </UpdateFunction>
+    <DeleteFunction FunctionId="FunctionId6">
+      <Argument Parameter="id" Member="id" />
+    </DeleteFunction>
+  </Table>
+  <Table Name="security.Access_Rights" Member="Access_Rights">
+    <Type Name="Access_Right">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Access_Right_Roles_Access_Right" Member="Roles_Access_Rights" OtherKey="Access_Right_id" Type="Roles_Access_Right" />
+    </Type>
+  </Table>
+  <Table Name="security.Locked_Objects" Member="Locked_Objects">
+    <Type Name="Locked_Object" Id="ID2">
+      <Column Name="ModuleCode" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="User_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Pk_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LockDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.Users_GetUserByCredentials" Method="Users_GetUserByCredentials">
+    <Parameter Name="pLogin" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pPassword" Type="System.String" DbType="VarChar(50)" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.Users_Update" Method="Users_Update">
+    <Parameter Name="pId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pFirstName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pLastName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pLogin" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pPassword" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pRole_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pIsActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="pUpdatedAt" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pUpdatedBy" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Locked_Objects_CheckLockOnObject" Method="Locked_Objects_CheckLockOnObject">
+    <Parameter Name="pModuleCode" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pPkId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="dbo.Locked_Objects_SetLockOnObject" Method="Locked_Objects_SetLockOnObject">
+    <Parameter Name="pModuleCode" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pUserId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pPkId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Locked_Objects_RemoveLockFromObject" Method="Locked_Objects_RemoveLockFromObject">
+    <Parameter Name="pModuleCode" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pUserId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pPkId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Users_GetUserByUniqueKey" Method="Users_GetUserByUniqueKey">
+    <Parameter Name="pLogin" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pCurrentId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.Users_Insert" Method="Users_Insert">
+    <Parameter Name="pid" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="pFirstName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pLastName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pLogin" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pPassword" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pRole_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pIsActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="pCreatedBy" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pCreatedAt" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId6" Name="dbo.Roles_Delete" Method="Roles_Delete">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Roles_GetRoleByUniqueKey" Method="Roles_GetRoleByUniqueKey">
+    <Parameter Name="pRoleName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pCurrentId" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Id="FunctionId4" Name="dbo.Roles_Insert" Method="Roles_Insert">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="RoleName" Parameter="roleName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="created_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="created_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId5" Name="dbo.Roles_Update" Method="Roles_Update">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RoleName" Parameter="roleName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="updated_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="updated_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Roles_CanDelete" Method="Roles_CanDelete">
+    <Parameter Name="pId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Roles_CanDeleteResult">
+      <Column Name="RoleCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Id="FunctionId3" Name="dbo.RolesAccessRights_Delete" Method="RolesAccessRights_Delete">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId2" Name="dbo.RolesAccessRights_Update" Method="RolesAccessRights_Update">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Role_id" Parameter="role_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Access_Right_id" Parameter="access_Right_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HasNew" Parameter="hasNew" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="HasEdit" Parameter="hasEdit" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="HasDelete" Parameter="hasDelete" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="updated_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="updated_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Id="FunctionId1" Name="dbo.RolesAccessRights_Insert" Method="RolesAccessRights_Insert">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="Role_id" Parameter="role_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Access_Right_id" Parameter="access_Right_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HasNew" Parameter="hasNew" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="HasEdit" Parameter="hasEdit" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="HasDelete" Parameter="hasDelete" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="created_by" Type="System.Int32" DbType="Int" />
+    <Parameter Name="created_at" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

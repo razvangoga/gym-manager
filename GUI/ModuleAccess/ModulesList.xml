@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<ModulesList xmlns="http://tempuri.org/ModulesList.xsd">
+  <!--Help-->
+	<Modules>
+		<id>1</id>
+		<name>Manual Aplicatie</name>
+		<control>MyControls.CustomControls.Help.HelpHtmlViewerControl,MyControls</control>
+		<isopen>false</isopen>
+	</Modules>
+  <!--Help-->
+  <!--Nomenclators-->
+	<Modules>
+		<id>10</id>
+		<name>Produse</name>
+		<control>GUI.Nomenclators.Products.ProductsControl</control>
+		<isopen>false</isopen>
+	</Modules>
+	<Modules>
+		<id>11</id>
+		<name>Categorii Produse</name>
+		<control>GUI.Nomenclators.ProductTypes.ProductTypesControl</control>
+		<isopen>false</isopen>
+	</Modules>
+	<Modules>
+		<id>12</id>
+		<name>Tipuri Intrari</name>
+		<control>GUI.Nomenclators.EntryTypes.EntryTypesControl</control>
+		<isopen>false</isopen>
+	</Modules>
+	<Modules>
+		<id>13</id>
+		<name>Tipuri Abonamente</name>
+		<control>GUI.Nomenclators.SubscriptionTypes.SubscriptionTypesControl</control>
+		<isopen>false</isopen>
+	</Modules>
+	<Modules>
+		<id>14</id>
+		<name>Terenuri</name>
+		<control>GUI.Nomenclators.Fields.FieldsControl</control>
+		<isopen>false</isopen>
+	</Modules>
+	<Modules>
+		<id>15</id>
+		<name>Clienti</name>
+		<control>GUI.Nomenclators.Clients.ClientsControl</control>
+		<isopen>false</isopen>
+	</Modules>
+	<Modules>
+		<id>16</id>
+		<name>Detalii Organizatie</name>
+		<control>GUI.Nomenclators.OrganizationDetails.OrganizationDetailsControl</control>
+		<isopen>false</isopen>
+	</Modules>
+  <!--End Nomenclators-->
+  <!--Operations-->
+	<Modules>
+		<id>20</id>
+		<name>Intrari Individuale</name>
+		<control>GUI.Operations.Entries.EntriesControl</control>
+		<isopen>false</isopen>
+	</Modules>
+  <Modules>
+    <id>21</id>
+    <name>Abonamente</name>
+    <control>GUI.Operations.Subscriptions.SubscriptionsControl</control>
+    <isopen>false</isopen>
+  </Modules>
+  <Modules>
+    <id>22</id>
+    <name>Inchirieri Terenuri</name>
+    <control>GUI.Operations.FieldReservations.FieldReservationsScheduleControl</control>
+    <isopen>false</isopen>
+  </Modules>
+  <Modules>
+    <id>23</id>
+    <name>Intrari Produse</name>
+    <control>GUI.Operations.ProductEntries.ProductEntriesControl</control>
+    <isopen>false</isopen>
+  </Modules>
+  <Modules>
+    <id>24</id>
+    <name>Vanzari Produse</name>
+    <control>GUI.Operations.ProductSales.ProductSalesControl</control>
+    <isopen>false</isopen>
+  </Modules>
+  <!--End Operations-->
+  <!--Reports-->
+	<Modules>
+		<id>30</id>
+		<name>Emitere Facturi</name>
+		<control>GUI.Reports.MonthlyInvoice.MonthlyInvoiceHtmlReportControl</control>
+		<isopen>false</isopen>
+	</Modules>
+  <Modules>
+    <id>31</id>
+    <name>Vanzari In Perioada</name>
+    <control>GUI.Reports.PeriodSales.PeriodSalesPivotControl</control>
+    <isopen>false</isopen>
+  </Modules>
+  <Modules>
+    <id>32</id>
+    <name>Detalii Abonamente</name>
+    <control>GUI.Reports.SubscriptionDetails.SubscriptionDetailsHtmlReportControl</control>
+    <isopen>false</isopen>
+  </Modules>
+  <Modules>
+    <id>33</id>
+    <name>Stocuri</name>
+    <control>GUI.Reports.PeriodStock.PeriodStockPivotControl</control>
+    <isopen>false</isopen>
+  </Modules>
+  <Modules>
+    <id>34</id>
+    <name>Fisa De Magazie</name>
+    <control>GUI.Reports.FisaMagazie.FisaMagazieHtmlReportControl</control>
+    <isopen>false</isopen>
+  </Modules>
+  <Modules>
+    <id>35</id>
+    <name>Avertizari Zilnice</name>
+    <control>GUI.Reports.DailyWarnings.DailyWarningsHtmlReportControl</control>
+    <isopen>false</isopen>
+  </Modules>
+  <!--End Reports-->
+  <!--Security & Settings-->
+	<Modules>
+		<id>41</id>
+		<name>Utilizatori Aplicatie</name>
+		<control>GUI.Security.Users.UsersControl</control>
+		<isopen>false</isopen>
+	</Modules>
+	<Modules>
+		<id>42</id>
+		<name>Roluri Utilizatori</name>
+		<control>GUI.Security.Roles.RolesControl</control>
+		<isopen>false</isopen>
+	</Modules>
+	<Modules>
+		<id>43</id>
+		<name>Setari Conexiune cu Baza de Date</name>
+		<control>MyControls.CustomControls.DatabaseSettingsControl,MyControls</control>
+		<isopen>false</isopen>
+	</Modules>
+	<Modules>
+		<id>44</id>
+		<name>Obiecte Blocate</name>
+		<control>GUI.Security.LockedObjects.LockedObjects</control>
+		<isopen>false</isopen>
+	</Modules>
+	<Modules>
+		<id>45</id>
+		<name>Alte Setari</name>
+		<control>MyControls.CustomControls.OtherSettingsControl,MyControls</control>
+		<isopen>false</isopen>
+	</Modules>
+  <!--End Security & Settings-->
+</ModulesList>

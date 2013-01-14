@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Gray_GymManager" Class="OperationsViewDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=D:\DB\MSSQL\Gray_GymManager.mdf;Persist Security Info=True;User ID=sa;Connect Timeout=30;User Instance=False" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="Gray_GymManagerConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Products_Stock_View" Member="Products_Stock_Views">
+    <Type Name="Products_Stock_View">
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductEntries" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ProductSales" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Stock" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
